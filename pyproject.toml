@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rarpy"
+version = "0.1.3"
+authors = [
+    { name = "Charlotte Knight", email = "charlotte.knight@imperial.ac.uk" },
+]
+description = "RARP server that responds to RARP requests with a configured MAC-to-IP mapping"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "scapy",
+]
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pre-commit",
+]
+
+[project.scripts]
+rarpy = "rarpy:main_cli"
